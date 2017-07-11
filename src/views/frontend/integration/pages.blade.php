@@ -86,6 +86,12 @@
                 </tr>
                 </thead>
                 <tbody>
+                <tr>
+                    <td>Components</td>
+                    <td>
+                        <a class="btn btn-floating cyan" target="_blank" href="{{ action('\Distilleries\Integration\Http\Controllers\Frontend\IntegrationController@getComponent') }}"><i class="material-icons">edit</i></a>
+                    </td>
+                </tr>
                 @foreach($tabOfPages as $page)
                     <tr>
                         <td>{{ $page['name'] }}</td>
