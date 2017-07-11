@@ -3,7 +3,8 @@
 
 use Illuminate\Support\ServiceProvider;
 
-class IntegrationServiceProvider extends ServiceProvider {
+class IntegrationServiceProvider extends ServiceProvider
+{
 
     /**
      * Indicates if loading of the provider is deferred.
@@ -19,15 +20,15 @@ class IntegrationServiceProvider extends ServiceProvider {
      */
     public function boot()
     {
-
+        $this->loadRoutesFrom(__DIR__.'/../../web.php');
         $this->loadViewsFrom(__DIR__ . '/../../views', 'integration');
         $this->loadTranslationsFrom(__DIR__ . '/../../lang', 'integration');
         $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations/');
 
 
         $this->publishes([
-            __DIR__ . '/../../config/config.php'    => config_path('integration.php'),
-            __DIR__ . '/../../database/seeds/'      => base_path('/database/seeds'),
+            __DIR__ . '/../../config/config.php' => config_path('integration.php'),
+            __DIR__ . '/../../database/seeds/'   => base_path('/database/seeds'),
         ]);
 
 
@@ -38,4 +39,5 @@ class IntegrationServiceProvider extends ServiceProvider {
             __DIR__ . '/../../config/config.php', 'integration'
         );
     }
+
 }
