@@ -1,4 +1,4 @@
-<?php namespace Distilleries\Expendable;
+<?php namespace Distilleries\Integration;
 
 
 use Illuminate\Support\ServiceProvider;
