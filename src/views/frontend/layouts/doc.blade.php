@@ -117,7 +117,9 @@
 
         iframe{width: 100%;}
 
-
+        .side-nav li>a{
+            height: auto;
+        }
 
     </style>
     @yield('scripts', '')
