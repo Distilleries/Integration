@@ -48,12 +48,13 @@ Add Service provider to `config/app.php`:
         'prefix_uri'             => 'integration',
         'disabled'               => false,
         'pages'=>[
-                [
-                    'name'=>'Page FAQ Example',
-                    'slug'=>'faq',
-                    'view'=>'integration::frontend.integration.pages.faq',
-                ]
+            [
+                'name'=>'Page FAQ Example',
+                'slug'=>'faq',
+                'status'=>'done', //done,in_progress,todo
+                'view'=>'integration::frontend.integration.pages.faq',
             ]
+        ]
     ];
 ```
 
