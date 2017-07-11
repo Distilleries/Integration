@@ -5,4 +5,11 @@ return [
     'controller'             => '\Distilleries\Integration\Http\Controllers\Frontend\IntegrationController@getComponentDetail',
     'prefix_uri'             => 'integration',
     'disabled'               => false,
+    'pages'=>[
+        [
+            'name'=>'Page FAQ Example',
+            'slug'=>'faq',
+            'view'=>'integration::frontend.pages.faq',
+        ]
+    ]
 ];
