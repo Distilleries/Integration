@@ -1,4 +1,4 @@
-@extends('integration::frontend.layouts.doc')
+@extends('integration::frontend.layouts.links')
 @section('content')
     <div class="container">
         <div class="row">
