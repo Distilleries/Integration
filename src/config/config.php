@@ -9,6 +9,7 @@ return [
         [
             'name'=>'Page FAQ Example',
             'slug'=>'faq',
+            'status'=>'done', //done,in_progress,todo
             'view'=>'integration::frontend.integration.pages.faq',
         ]
     ]

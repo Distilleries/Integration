@@ -94,27 +94,6 @@
             hyphens: none;
         }
 
-        .btn-floating{
-            width: 20px;
-            height: 20px;
-            line-height: 20px;
-            margin-bottom: 5px;
-        }
-
-        .btn-floating i{
-            line-height: 20px;
-            font-size: 12px;
-        }
-
-        main{
-            padding-left: 300px;
-        }
-        @media only screen and (max-width: 992px){
-            main{
-                padding-left: 0;
-            }
-        }
-
         iframe{width: 100%;}
 
 

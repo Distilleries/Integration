@@ -89,7 +89,14 @@
             <tr>
                 <td>{{ $page['name'] }}</td>
                 <td>
-                    <a class="btn btn-floating cyan pulse" target="_blank" href="{{ action('\Distilleries\Integration\Http\Controllers\Frontend\IntegrationController@getPage') }}/{{$page['slug']}}"><i class="material-icons">edit</i></a>
+                    <a class="btn btn-floating cyan" target="_blank" href="{{ action('\Distilleries\Integration\Http\Controllers\Frontend\IntegrationController@getPage',['slug'=>$page['slug']]) }}"><i class="material-icons">edit</i></a>
+                    @if(!empty($page['status']) && $page['status'] == 'done')
+                        <a class="btn btn-floating green" target="_blank" href="{{ action('\Distilleries\Integration\Http\Controllers\Frontend\IntegrationController@getPage',['slug'=>$page['slug']]) }}"><i class="material-icons">done</i></a>
+                    @elseif(!empty($page['status']) && $page['status'] == 'in_progress')
+                        <a class="btn btn-floating orange" target="_blank" href="{{ action('\Distilleries\Integration\Http\Controllers\Frontend\IntegrationController@getPage',['slug'=>$page['slug']]) }}"><i class="material-icons">work</i></a>
+                    @else
+                    <a class="btn btn-floating grey" target="_blank" href="{{ action('\Distilleries\Integration\Http\Controllers\Frontend\IntegrationController@getPage',['slug'=>$page['slug']]) }}"><i class="material-icons">assignment_late</i></a>
+                    @endif
                 </td>
             </tr>
         @endforeach

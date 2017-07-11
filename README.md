@@ -47,6 +47,13 @@ Add Service provider to `config/app.php`:
         'controller'             => '\Distilleries\Integration\Http\Controllers\Frontend\IntegrationController@getComponentDetail',
         'prefix_uri'             => 'integration',
         'disabled'               => false,
+        'pages'=>[
+                [
+                    'name'=>'Page FAQ Example',
+                    'slug'=>'faq',
+                    'view'=>'integration::frontend.integration.pages.faq',
+                ]
+            ]
     ];
 ```
 
@@ -56,6 +63,7 @@ path_partial_component | Path where to load partial component
 controller | Controller and methode use to get detail iframe
 prefix_uri | Uri prefix for integration route
 disabled | Disable the integration generation
+pages | Table of static page
 
 
 ##Usage 
