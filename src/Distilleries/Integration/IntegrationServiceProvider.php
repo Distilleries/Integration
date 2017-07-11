@@ -21,18 +21,14 @@ class IntegrationServiceProvider extends ServiceProvider
     public function boot()
     {
 
-
-
         $this->publishes([
             __DIR__ . '/../../config/config.php' => config_path('integration.php'),
             __DIR__ . '/../../database/seeds/'   => base_path('/database/seeds'),
         ]);
 
-
         $this->loadRoutesFrom(__DIR__.'/../../web.php');
         $this->loadViewsFrom(__DIR__ . '/../../views', 'integration');
         $this->loadTranslationsFrom(__DIR__ . '/../../lang', 'integration');
-
         $this->publishes([
             __DIR__ . '/../../views' => base_path('resources/views/vendor/integration'),
         ], 'views');
