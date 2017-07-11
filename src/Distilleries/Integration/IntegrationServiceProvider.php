@@ -3,7 +3,7 @@
 
 use Illuminate\Support\ServiceProvider;
 
-class IntegrationPackageServiceProvider extends ServiceProvider
+class IntegrationServiceProvider extends ServiceProvider
 {
 
     /**
@@ -11,7 +11,7 @@ class IntegrationPackageServiceProvider extends ServiceProvider
      *
      * @var bool
      */
-    protected $defer = true;
+    protected $defer = false;
 
     /**
      * Bootstrap the application events.
