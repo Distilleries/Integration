@@ -89,7 +89,7 @@
             <tr>
                 <td>{{ $page['name'] }}</td>
                 <td>
-                    <a class="btn btn-floating cyan pulse" target="_blank" href="{{ action('\Distilleries\Integration\Http\Controllers\Frontend\IntegrationController@getPageListe',['slug'=>$page['slug']]) }}"><i class="material-icons">edit</i></a>
+                    <a class="btn btn-floating cyan pulse" target="_blank" href="{{ action('\Distilleries\Integration\Http\Controllers\Frontend\IntegrationController@getPage') }}/{{$page['slug']}}"><i class="material-icons">edit</i></a>
                 </td>
             </tr>
         @endforeach

@@ -9,7 +9,7 @@ return [
         [
             'name'=>'Page FAQ Example',
             'slug'=>'faq',
-            'view'=>'integration::frontend.pages.faq',
+            'view'=>'integration::frontend.integration.pages.faq',
         ]
     ]
 ];
