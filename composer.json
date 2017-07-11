@@ -1,0 +1,49 @@
+{
+    "name": "distilleries/integration",
+    "description": "Tool to have a dashboard of component of the app.",
+    "license": "MIT",
+    "keywords": [
+        "framework",
+        "laravel",
+        "admin",
+        "form-generator",
+        "datatable-generator",
+        "expendable",
+        "distilleries",
+        "gulp"
+    ],
+    "authors": [
+        {
+            "name": "Maxime Francois",
+            "email": "kezho@me.com"
+        }
+    ],
+
+    "require": {
+        "php": ">=5.6.4",
+        "illuminate/support": "5.4.*",
+        "illuminate/database": "5.4.*",
+        "illuminate/translation": "5.4.*"
+    },
+    "require-dev": {
+        "orchestra/database": "3.4.*",
+        "orchestra/testbench": "3.4.*",
+        "orchestra/testbench-browser-kit": "3.4.*",
+        "phpunit/phpunit": "~5.7",
+        "mockery/mockery": "0.9.*",
+        "fzaninotto/faker": "1.6.*"
+    },
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
+        "classmap": [
+            "tests"
+        ],
+        "psr-4": {
+            "Distilleries\\Integration\\": "src/Distilleries/Integration"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
