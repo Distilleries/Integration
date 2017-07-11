@@ -1,4 +1,4 @@
-@extends('frontend.layouts.doc')
+@extends('integration::frontend.layouts.doc')
 @section('content')
     @foreach($tabComponents as $key=>$component)
         <div class="section scrollspy">

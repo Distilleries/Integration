@@ -26,7 +26,7 @@ class IntegrationServiceProvider extends ServiceProvider
             __DIR__ . '/../../database/seeds/'   => base_path('/database/seeds'),
         ]);
 
-        $this->loadRoutesFrom(__DIR__.'/../../web.php');
+        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
         $this->loadViewsFrom(__DIR__ . '/../../views', 'integration');
         $this->loadTranslationsFrom(__DIR__ . '/../../lang', 'integration');
         $this->publishes([

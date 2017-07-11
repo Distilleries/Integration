@@ -1,4 +1,4 @@
-@extends('frontend.layouts.integration')
+@extends('integration::frontend.layouts.integration')
 @section('content')
     @include($slug)
 @endsection
