@@ -11,10 +11,12 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+
 if (empty(config('integration.disabled', false))) {
-    $router->group(['prefix' => config('integration.prefix_uri')], function () use ($router) {
-        $router->get('/', 'Frontend\IntegrationController@getIndex');
-        $router->get('/component-detail/{any}', 'Frontend\IntegrationController@getComponentDetail');
-        $router->get('/component', 'Frontend\IntegrationController@getComponent');
+    Route::group(['prefix' => config('integration.prefix_uri')], function (){
+        Route::get('/', 'Frontend\IntegrationController@getIndex');
+        Route::get('/component-detail/{any}', 'Frontend\IntegrationController@getComponentDetail');
+        Route::get('/component', 'Frontend\IntegrationController@getComponent');
     });
 }
