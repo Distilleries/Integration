@@ -20,10 +20,7 @@ class IntegrationServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadRoutesFrom(__DIR__.'/../../web.php');
-        $this->loadViewsFrom(__DIR__ . '/../../views', 'integration');
-        $this->loadTranslationsFrom(__DIR__ . '/../../lang', 'integration');
-        $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations/');
+
 
 
         $this->publishes([
@@ -32,12 +29,22 @@ class IntegrationServiceProvider extends ServiceProvider
         ]);
 
 
+        $this->loadRoutesFrom(__DIR__.'/../../web.php');
+        $this->loadViewsFrom(__DIR__ . '/../../views', 'integration');
+        $this->loadTranslationsFrom(__DIR__ . '/../../lang', 'integration');
+
         $this->publishes([
             __DIR__ . '/../../views' => base_path('resources/views/vendor/integration'),
         ], 'views');
+
+    }
+
+    public function register()
+    {
         $this->mergeConfigFrom(
             __DIR__ . '/../../config/config.php', 'integration'
         );
+
     }
 
 }
