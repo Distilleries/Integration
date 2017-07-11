@@ -3,7 +3,7 @@
 
 use Illuminate\Support\ServiceProvider;
 
-class IntegrationServiceProvider extends ServiceProvider
+class IntegrationPackageServiceProvider extends ServiceProvider
 {
 
     /**
