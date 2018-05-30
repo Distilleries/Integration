@@ -11,7 +11,7 @@ Integration is package to work with frontend developer.
 
 
 ##Installation
-
+Auto detect package has been set on this release.
 Add on your composer.json
 
 ``` json
