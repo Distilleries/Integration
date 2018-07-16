@@ -12,5 +12,11 @@ return [
             'status'=>'done', //done,in_progress,todo
             'view'=>'integration::frontend.integration.pages.faq',
         ]
+    ],
+    'namespace'=>[
+        'transformer'=>env('INTEGRATION_NAMESPACE_TRANSFORMER','\App\Transformers\Components\\')
+    ],
+    'path'=>[
+        'transformer'=>env('INTEGRATION_PATH_TRANSFORMER',app_path('Transformers/Components/'))
     ]
 ];

@@ -1,12 +1,16 @@
 <?php
 
 
-if (!function_exists('transformGetContentClass')) {
+if (!function_exists('transformGetContentClass'))
+{
     function transformGetContentClass($class, $path = null)
     {
-        if (empty($path)) {
-            $path = app_path('Transformers/Components/' . str_replace('\\', '/', $class) . '.php');
-        } else {
+        if (empty($path))
+        {
+
+            $path = rtrim(config('integration.path.transformer'), '/') . '/' . str_replace('\\', '/', $class) . '.php';
+        } else
+        {
             $path = $path . $class;
         }
 
@@ -14,23 +18,42 @@ if (!function_exists('transformGetContentClass')) {
     }
 }
 
-if (!function_exists('transform')) {
-    function transform($class, $object, $namespace = '\App\Transformers\Components\\')
+if (!function_exists('transform'))
+{
+    function transform($class, $object, $namespace = null)
     {
+
+        if (empty($namespace))
+        {
+            $namespace = config('integration.namespace.transformer');
+        }
+
         return app($namespace . $class)->transform($object);
     }
 }
 
-if (!function_exists('transformObject')) {
-    function transformObject($class, $object, $namespace = '\App\Transformers\Components\\')
+if (!function_exists('transformObject'))
+{
+    function transformObject($class, $object, $namespace = null)
     {
+        if (empty($namespace))
+        {
+            $namespace = config('integration.namespace.transformer');
+        }
+
         return app($namespace . $class)->transformObject($object);
     }
 }
 
-if (!function_exists('transformArray')) {
-    function transformArray($class, $object, $namespace = '\App\Transformers\Components\\')
+if (!function_exists('transformArray'))
+{
+    function transformArray($class, $object, $namespace = null)
     {
+        if (empty($namespace))
+        {
+            $namespace = config('integration.namespace.transformer');
+        }
+
         return app($namespace . $class)->transformArray($object);
     }
 }
