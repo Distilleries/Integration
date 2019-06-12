@@ -2,19 +2,19 @@
 [![Latest Stable Version](https://poser.pugx.org/distilleries/integration/version)](https://packagist.org/packages/distilleries/integration)
 [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](LICENSE) 
 
-#Integration
+# Integration
 
 Integration is package to work with frontend developer. 
 
 ## Table of contents
 
+## Installation
 
-
-##Installation
 Auto detect package has been set on this release.
+
 Add on your composer.json
 
-``` json
+```json
     "require": {
         "distilleries/integration": "1.*",
     }
@@ -22,39 +22,35 @@ Add on your composer.json
 
 run `composer update`.
 
-
-
 Add Service provider to `config/app.php`:
 
-``` php
+(or auto-loaded if Laravel >= 5.7)
+
+```php
     'providers' => [
-        
-        /*
-         * Package Service Providers...
-         */
+        //
+        // Package Service Providers...
+        //
         Distilleries\Integration\IntegrationServiceProvider::class,
-
-
     ]
 ```
 
-
-##Configurations
+## Configurations
 
 ```php
     return [
         'path_partial_component' => resource_path('views/frontend/integration/components/partials'),
-        'controller'             => '\Distilleries\Integration\Http\Controllers\Frontend\IntegrationController@getComponentDetail',
-        'prefix_uri'             => 'integration',
-        'disabled'               => false,
-        'pages'=>[
+        'controller' => '\Distilleries\Integration\Http\Controllers\Frontend\IntegrationController@getComponentDetail',
+        'prefix_uri' => 'integration',
+        'disabled' => false,
+        'pages' => [
             [
-                'name'=>'Page FAQ Example',
-                'slug'=>'faq',
-                'status'=>'done', //done,in_progress,todo
-                'view'=>'integration::frontend.integration.pages.faq',
-            ]
-        ]
+                'name' => 'Page FAQ Example',
+                'slug' => 'faq',
+                'status' => 'done', //done,in_progress,todo
+                'view' => 'integration::frontend.integration.pages.faq',
+            ],
+        ],
     ];
 ```
 
@@ -66,8 +62,7 @@ prefix_uri | Uri prefix for integration route
 disabled | Disable the integration generation
 pages | Table of static page
 
-
-##Usage 
+## Usage 
 
 ```blade
     @component('frontend.components.forms.buttons',transform('Forms\ButtonsTransformer', [
@@ -75,11 +70,10 @@ pages | Table of static page
         'background' => '',
         'border' => 'border-enabled',
         'text_color' => 'text-grey',
-        'size' => 'small'
-     ]))
+        'size' => 'small',
+    ]))
         @slot('label')
             EDIT
         @endslot
-       
     @endcomponent
 ```
